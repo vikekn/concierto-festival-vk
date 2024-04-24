@@ -1,0 +1,80 @@
+@use 'variables' as v;
+/* Configuración de la fuente base para el tamaño de texto.
+   1 rem (root em) es igual al 10% del tamaño de fuente del elemento raíz, 
+   que generalmente es el elemento HTML. 
+   Al establecerlo en 62.5%, se hace que 1 rem sea igual al 10px, 
+   lo que facilita los cálculos de tamaño de fuente.
+*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+/* Establece 'box-sizing' como 'border-box' para todos los elementos en la página.
+   Esto asegura que el tamaño de un elemento incluirá su borde y relleno, 
+   en lugar de ser solo el contenido, lo que es la configuración predeterminada.
+*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Configuración de la fuente principal y tamaño de fuente para el cuerpo (body) de la página. */
+body {
+    font-family: v.$fuente_principal; /* Establece la fuente principal definida en la variable v.$fuente_principal. */
+    font-size: 1.6rem; /* Establece el tamaño de fuente a 1.6 rem (root em). */
+    &.fijar-body{ //evitar scroll en imagenes de galeria
+        overflow: hidden;
+    }
+
+    &.body-scroll{
+        scroll-padding-top: 8.6rem ;
+    }
+}
+
+/* Estilos para los párrafos (p). */
+p {
+    font-size: 2rem; /* Establece el tamaño de fuente de los párrafos a 2 rem. */
+    color: v.$negro; /* Establece el color de texto utilizando la variable v.$negro. */
+    line-height: 1.5; /*interlineado*/
+}
+
+/* Estilos para el contenedor con clase "contenedor". */
+.contenedor {
+    width: 95%; /* Establece el ancho del contenedor al 95% del ancho disponible. */
+    max-width: 120rem; /* Establece el ancho máximo del contenedor a 120 rem. */
+    margin: 0 auto; /* Centra horizontalmente el contenedor en la página. */
+}
+
+/* Estilos para los enlaces (a). */
+a {
+    text-decoration: none; /* Elimina la decoración de subrayado de los enlaces. */
+}
+
+/* Estilos para los títulos h1, h2, y h3. */
+h1, h2, h3 {
+    margin: 0 0 5rem 0; /* Establece el margen en la parte inferior de los títulos. */
+}
+
+/* Estilos para h1 (encabezado de nivel 1). */
+h1 {
+    font-size: 4rem; /* Establece el tamaño de fuente de h1 a 4 rem. */
+}
+
+/* Estilos para h2 (encabezado de nivel 2). */
+h2 {
+    font-size: 3.6rem; /* Establece el tamaño de fuente de h2 a 3.6 rem. */
+}
+
+/* Estilos para h3 (encabezado de nivel 3). */
+h3 {
+    font-size: 3rem; /* Establece el tamaño de fuente de h3 a 3 rem. */
+}
+
+img{
+    max-width: 100%;  /*se utiliza para establecer el ancho máximo de un elemento especificado*/
+    width: 100%;
+    height: auto;
+    display: block; /*hace que el comportamiento del elemento sea como un bloque.*/
+}

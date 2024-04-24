@@ -1,0 +1,87 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    /* Establece la posición relativa del elemento, posicionándolo con respecto a su posición original en el flujo del documento. */
+    position: relative;
+
+    /* Establece la altura máxima del elemento en 70 unidades rem. */
+    max-height: 70rem;
+
+    /* Establece la altura mínima del elemento en 50 unidades rem. */
+    min-height: 50rem;
+
+    /* Controla el comportamiento de desbordamiento del contenido dentro del elemento. 
+    En este caso, cualquier contenido que exceda la altura máxima se ocultará. */
+    overflow: hidden;
+
+
+    .overlay {
+        /* Establece la posición absoluta del elemento, posicionándolo con respecto al contenedor más cercano con posición relativa o al borde de la ventana. */
+        position: absolute;
+
+        /* Establece un fondo con degradado lineal que va desde un tono de púrpura semitransparente a un tono de rosa más claro. */
+        background: rgb(126,2,195);
+        background: linear-gradient(270deg, rgba(126,2,195,0.5) 0%, rgba(255,0,110,0.3) 100%);
+
+        /* Establece la altura y el ancho del elemento al 100% del tamaño del contenedor padre. */
+        height: 100%;
+        width: 100%;
+
+        /* Establece el elemento como un contenedor flexible con dirección de columna, lo que significa que sus hijos se colocarán en una columna de arriba a abajo. */
+        display: flex;
+        flex-direction: column;
+
+        /* Centra el contenido verticalmente dentro del contenedor flexible. */
+        justify-content: center;
+
+    }
+
+    video {
+        width: auto;
+        display: block;
+        @include m.desktop {
+            width: 100%;
+        }
+    }
+}
+
+
+.contenido-video {
+    /* Establece la posición de apilamiento del elemento en 10. 
+   Un valor mayor de z-index coloca el elemento encima de elementos con un z-index menor. */
+z-index: 10;
+
+    z-index: 10 ;
+    h2 {
+        color: v.$blanco;
+/* Establece el tamaño de fuente del texto a 7 rem (unidades relativas al tamaño de la fuente del elemento raíz). */
+    font-size: 7rem;
+
+/* Elimina los márgenes por defecto del elemento. */
+    margin: 0;
+    }
+    p {
+/* Establece el color de fondo utilizando una variable llamada $rosa definida en el contexto de un preprocesador como Sass o Less. */
+background-color: v.$rosa;
+
+/* Define el comportamiento de visualización del elemento como en línea, pero permite ajustar márgenes y dimensiones como un bloque. */
+display: inline-block;
+
+/* Establece el relleno (padding) del elemento, proporcionando espacio alrededor del contenido. */
+padding: 1rem 2rem;
+
+/* Establece el color del texto utilizando una variable llamada $blanco definida en el contexto de un preprocesador como Sass o Less. */
+color: v.$blanco;
+
+/* Establece la negrita (bold) del texto. */
+font-weight: 700;
+
+/* Establece el tamaño de fuente del texto. */
+font-size: 2.4rem;
+
+/* Elimina los márgenes por defecto del elemento. */
+margin: 0;
+
+    }
+}

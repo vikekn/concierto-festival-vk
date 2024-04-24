@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+/* Estilo para la sección 'sobre-festival' */
+.sobre-festival {
+    /* Establece el relleno (padding) superior e inferior del contenedor */
+    padding: 5rem 0;
+
+    /* Utiliza un mixin para aplicar estilos específicos en dispositivos tipo tablet */
+    @include m.tablet {
+        /* Utiliza otro mixin para aplicar un sistema de cuadrícula con 2 columnas y un espacio entre ellas de 5rem */
+        @include m.grid(2, 5rem);
+    }
+}
+
+/* Estilo para la sección 'contenido-festival' */
+.contenido-festival {
+    /* Establece el elemento como un contenedor flexible con dirección de columna y contenido centrado verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* Utiliza estilos específicos para tablet al agregar un margen superior de 5rem */
+    @include m.tablet {
+        margin-top: 5rem;
+    }
+
+    /* Estilos para el elemento 'h2' dentro de 'contenido-festival' */
+    h2 {
+        /* Establece un margen inferior de 2rem para 'h2' */
+        margin-bottom: 2rem;
+    }
+
+    /* Estilos para el elemento con la clase 'fecha' dentro de 'contenido-festival' */
+    .fecha {
+        /* Establece el color del texto utilizando una variable $rosa definida en el contexto del preprocesador */
+        color: v.$rosa;
+        /* Establece la negrita (bold) del texto */
+        font-weight: 700;
+    }
+}
